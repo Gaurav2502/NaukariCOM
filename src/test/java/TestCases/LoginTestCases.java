@@ -4,7 +4,9 @@ import java.time.Duration;
 import org.testng.annotations.Test;
 
 import resource.BaseClass;
+import resource.TestData;
 import resource.commonMethods;
+import PageObjectModel.HomePageObjcet;
 import PageObjectModel.LoginPageObject;
 
 public class LoginTestCases extends BaseClass{
@@ -20,14 +22,16 @@ public class LoginTestCases extends BaseClass{
 		Thread.sleep(2000);
 	
 		commonMethods.ActionClick(driver, lpo.EnterUsername());
-		lpo.EnterUsername().sendKeys("gaurav.arundekar@gmail.com");
+		lpo.EnterUsername().sendKeys(TestData.username);
 		
 		commonMethods.ActionClick(driver, lpo.EnterPassword());
-		lpo.EnterPassword().sendKeys("Gaurav@7365");
+		lpo.EnterPassword().sendKeys(TestData.password);
 		
-		//commonMethods.ActionClick(driver, lpo.ClickLog());
+		commonMethods.ActionClick(driver, lpo.ClickLog());
 		
-		driver.quit();
+		HomePageObjcet hpo=new HomePageObjcet(driver);
+		hpo.clickView().click();
+		
 		
 	}
 	

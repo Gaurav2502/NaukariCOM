@@ -1,6 +1,7 @@
 package resource;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -52,4 +53,10 @@ public class BaseClass {
 		driver.manage().window().maximize();
 	}
 	
+//	public void FetchResume() throws FileNotFoundException {
+//		FileInputStream fs= new FileInputStream(System.getProperty("user.dir") +"\\PracticeProject\\src\\main\\java\\resource\\data.properties");
+//		
+//		prop= new Properties();
+//		prop.load(fs);
+//	}
 }
