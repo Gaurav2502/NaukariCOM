@@ -18,8 +18,6 @@ public class LoginPageObject {
 		this.driver=driver;
 	}
 
-
-
 	public WebElement ClickLoginBtn() {
 		return driver.findElement(HloginBtn);
 	}

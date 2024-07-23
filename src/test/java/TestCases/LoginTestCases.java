@@ -8,6 +8,7 @@ import resource.TestData;
 import resource.commonMethods;
 import PageObjectModel.HomePageObjcet;
 import PageObjectModel.LoginPageObject;
+import PageObjectModel.ViewPageObject;
 
 public class LoginTestCases extends BaseClass{
 
@@ -19,7 +20,7 @@ public class LoginTestCases extends BaseClass{
 		LoginPageObject lpo= new LoginPageObject(driver);
 		lpo.ClickLoginBtn().click();
 		
-		Thread.sleep(2000);
+		commonMethods.handleExplictWait(driver, 10, lpo.EnterUsername());
 	
 		commonMethods.ActionClick(driver, lpo.EnterUsername());
 		lpo.EnterUsername().sendKeys(TestData.username);
@@ -32,7 +33,19 @@ public class LoginTestCases extends BaseClass{
 		HomePageObjcet hpo=new HomePageObjcet(driver);
 		hpo.clickView().click();
 		
+		ViewPageObject vpo = new ViewPageObject(driver);
+		vpo.ClickEdit().click();
+		vpo.EnterResumeHeadline().clear();
+		vpo.EnterResumeHeadline().sendKeys(TestData.ResumeHeadline);
 		
+		commonMethods.handleExplictWait(driver, 10, vpo.SaveBtn());
+		vpo.SaveBtn().click();
+		
+		vpo.ClickProfile().click();
+		vpo.ClickLogOut().click();
+		
+		
+		driver.quit();
 	}
 	
 	
