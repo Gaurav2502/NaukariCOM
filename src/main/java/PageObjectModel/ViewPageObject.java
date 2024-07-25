@@ -8,7 +8,9 @@ public class ViewPageObject {
 	WebDriver driver;
 
 	private By ResumeDelete= By.xpath("(//i[@class='icon'])[2]");
-	private By UploadResume= By.xpath("//span[@class='dummyUploadNewCTA']");
+	private By confirmDelete= By.xpath("(//button[@class='btn-dark-ot'])[2]");
+	//private By UploadResume= By.xpath("//span[@class='dummyUploadNewCTA']");
+	private By UploadResume= By.cssSelector(".dummyUploadNewCTA");
 	private By Edit= By.xpath("(//div[@class='widgetHead']/span)[2]");
 	private By ResumeHeadline=By.xpath("//div[@class='input-field s12']/textarea");
 	private By HeadlineSave=By.xpath("(//button[@class='btn-dark-ot'])[3]");
@@ -22,6 +24,10 @@ public class ViewPageObject {
 
 	public WebElement ClickDelete() {
 		return driver.findElement(ResumeDelete);
+	}
+	
+	public WebElement ClickConDelete() {
+		return driver.findElement(confirmDelete);
 	}
 	
 	public WebElement ClickUpload() {

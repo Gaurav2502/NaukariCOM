@@ -53,10 +53,8 @@ public class BaseClass {
 		driver.manage().window().maximize();
 	}
 	
-//	public void FetchResume() throws FileNotFoundException {
-//		FileInputStream fs= new FileInputStream(System.getProperty("user.dir") +"\\PracticeProject\\src\\main\\java\\resource\\data.properties");
-//		
-//		prop= new Properties();
-//		prop.load(fs);
-//	}
+	public static void FetchResume() throws FileNotFoundException {
+		String projectPath=System.getProperty("user.dir");
+		
+	}
 }
