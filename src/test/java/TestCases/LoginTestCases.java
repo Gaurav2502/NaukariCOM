@@ -69,7 +69,7 @@ public class LoginTestCases extends BaseClass{
 	    
 		
 		vpo.ClickEdit().click();
-		vpo.EnterResumeHeadline().clear();
+		vpo.EnterResumeHeadline().clear(); 
 		vpo.EnterResumeHeadline().sendKeys(TestData.ResumeHeadline);
 		
 		commonMethods.handleExplictWait(driver, 10, vpo.SaveBtn());
@@ -79,6 +79,7 @@ public class LoginTestCases extends BaseClass{
 		vpo.ClickLogOut().click();
 		
 		
+		driver.quit();
 	
 	}
 	
